@@ -32,9 +32,7 @@ RUN \
   gem install bundler
 
 # Install Node.js
-RUN \
-  add-apt-repository -y ppa:chris-lea/node.js && \
-  apt-get update && apt-get install -y nodejs
+RUN apt-get install -y nodejs
 
 # Adding npm-exec
 RUN alias npm-exec='PATH=$(npm bin):$PATH'
