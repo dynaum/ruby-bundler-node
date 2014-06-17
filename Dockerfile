@@ -22,3 +22,11 @@ RUN \
   apt-get update && \
   apt-get install -y nodejs
 
+# Define mountable directories.
+VOLUME ["/data"]
+
+# Define working directory.
+WORKDIR /data
+
+# Define default command.
+CMD ["bash"]
