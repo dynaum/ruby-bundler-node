@@ -6,7 +6,7 @@ RUN \
   apt-get update && \
   apt-get -y install \
   git-core \
-  libcurl3-openssl-dev \
+  libcurl4-openssl-dev \
   libc6-dev \
   libreadline-dev \
   libssl-dev \
@@ -21,12 +21,3 @@ RUN \
   apt-add-repository ppa:chris-lea/node.js && \
   apt-get update && \
   apt-get install -y nodejs
-
-# Define mountable directories.
-VOLUME ["/data"]
-
-# Define working directory.
-WORKDIR /data
-
-# Define default command.
-CMD ["bash"]
