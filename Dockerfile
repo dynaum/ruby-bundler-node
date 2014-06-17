@@ -21,3 +21,6 @@ RUN \
   apt-add-repository ppa:chris-lea/node.js && \
   apt-get update && \
   apt-get install -y nodejs
+
+# Adding npm-exec
+RUN alias npm-exec='PATH=$(npm bin):$PATH'
