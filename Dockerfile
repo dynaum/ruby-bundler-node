@@ -3,9 +3,8 @@ FROM dockerfile/ruby
 
 # dependencies
 RUN \
+  apt-get update && \
   apt-get -y install \
-  build-essential \
-  curl \
   git-core \
   libcurl4-openssl-dev \
   libreadline-dev \
