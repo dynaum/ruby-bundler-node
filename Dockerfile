@@ -6,7 +6,7 @@ RUN \
   apt-get update && \
   apt-get -y install \
   git-core \
-  libcurl4-openssl-dev \
+  libcurl3-openssl-dev \
   libreadline-dev \
   libssl-dev \
   libxml2-dev \
