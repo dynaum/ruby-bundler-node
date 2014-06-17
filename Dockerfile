@@ -7,6 +7,7 @@ RUN \
   apt-get -y install \
   git-core \
   libcurl3-openssl-dev \
+  libc6-dev \
   libreadline-dev \
   libssl-dev \
   libxml2-dev \
