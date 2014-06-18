@@ -32,7 +32,7 @@ RUN \
   gem install bundler
 
 # Install Node.js
-RUN apt-get install -y nodejs npm
+RUN apt-get install -y nodejs-legacy npm
 
 # Adding npm-exec
 RUN alias npm-exec='PATH=$(npm bin):$PATH'
