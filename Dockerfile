@@ -19,7 +19,8 @@ RUN \
   libxml2-dev \
   libxslt1-dev \
   libyaml-dev \
-  zlib1g-dev
+  zlib1g-dev \
+  vim
 
 # Ruby install
 RUN \
@@ -32,7 +33,10 @@ RUN \
   gem install bundler
 
 # Install Node.js
-RUN apt-get install -y nodejs-legacy npm
+RUN \
+  apt-get install -y nodejs-legacy npm && \
+  npm config set prefix ~/npm && \
+  echo "export PATH=$HOME/npm/bin:$PATH" > .bashrc
 
 # Adding npm-exec
 RUN alias npm-exec='PATH=$(npm bin):$PATH'
