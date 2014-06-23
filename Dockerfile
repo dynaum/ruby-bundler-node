@@ -40,7 +40,7 @@ RUN \
 # Install PhantomJS
 RUN \
   mkdir ~/share && cd ~/share && \
-  curl --progress http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz | tar xjf && \
+  curl --progress https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2 | tar xj && \
   sudo ln -s ~/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs ~/bin/phantomjs
 
 # Adding bin folders on PATH
