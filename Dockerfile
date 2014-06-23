@@ -20,6 +20,7 @@ RUN \
   libxslt1-dev \
   libyaml-dev \
   zlib1g-dev \
+  phantomjs \
   vim
 
 # Ruby install
@@ -36,12 +37,6 @@ RUN \
 RUN \
   apt-get install -y nodejs-legacy npm && \
   npm config set prefix ~/npm
-
-# Install PhantomJS
-RUN \
-  mkdir ~/share && cd ~/share && \
-  curl --progress https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2 | tar xj && \
-  sudo ln -s ~/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs ~/bin/phantomjs
 
 # Adding bin folders on PATH
 RUN \
