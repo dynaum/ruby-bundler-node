@@ -36,10 +36,11 @@ RUN \
 # Install Node.js
 RUN \
   apt-get install -y nodejs-legacy npm && \
-  npm config set prefix ~/npm
+  npm config set prefix /azk/npm && \
+  npm install -g grunt-cli
 
 # Adding bin folders on PATH
 RUN \
-  echo "export PATH=$HOME/bin:$HOME/npm/bin:$PATH" > .bashrc
+  echo "export PATH=$HOME/bin:/azk/npm/bin:$PATH" > .bashrc
 
 CMD "bash"
