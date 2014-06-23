@@ -35,8 +35,16 @@ RUN \
 # Install Node.js
 RUN \
   apt-get install -y nodejs-legacy npm && \
-  npm config set prefix ~/npm && \
-  echo "export PATH=$HOME/npm/bin:$PATH" > .bashrc
+  npm config set prefix ~/npm
 
-# Adding npm-exec
-RUN alias npm-exec='PATH=$(npm bin):$PATH'
+# Install PhantomJS
+RUN \
+  mkdir ~/share && cd ~/share && \
+  curl --progress http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz | tar xjf && \
+  sudo ln -s ~/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs ~/bin/phantomjs
+
+# Adding bin folders on PATH
+RUN \
+  echo "export PATH=$HOME/bin:$HOME/npm/bin:$PATH" > .bashrc
+
+CMD "bash"
