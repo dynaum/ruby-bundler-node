@@ -22,7 +22,20 @@ RUN \
   libxslt1-dev \
   libyaml-dev \
   zlib1g-dev \
-  vim
+  vim \
+  g++ \
+  flex \
+  bison \
+  gperf \
+  perl \
+  libsqlite3-dev \
+  libfontconfig1-dev \
+  libicu-dev \
+  libfreetype6 \
+  libssl-dev \
+  libpng-dev \
+  libjpeg-dev \
+  ttf-mscorefonts-installer
 
 # Ruby install
 RUN \
