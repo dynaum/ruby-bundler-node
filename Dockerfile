@@ -34,8 +34,7 @@ RUN \
   libfreetype6 \
   libssl-dev \
   libpng-dev \
-  libjpeg-dev \
-  ttf-mscorefonts-installer
+  libjpeg-dev
 
 # Ruby install
 RUN \
