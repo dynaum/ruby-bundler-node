@@ -1,6 +1,8 @@
 # Pull base image.
 FROM ubuntu:14.04
 
+VOLUME ["/azk/npm"]
+
 # Ignore APT warnings about not having a TTY
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -20,7 +22,6 @@ RUN \
   libxslt1-dev \
   libyaml-dev \
   zlib1g-dev \
-  phantomjs \
   vim
 
 # Ruby install
@@ -38,6 +39,15 @@ RUN \
   apt-get install -y nodejs-legacy npm && \
   npm config set prefix /azk/npm && \
   npm install -g grunt-cli
+
+# Phantomjs 1.9.7
+RUN \
+  cd /usr/local/share
+  wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2 && \
+  tar xjf phantomjs-1.9.7-linux-x86_64.tar.bz2 && \
+  ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs && \
+  ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs && \
+  ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
 
 # Adding bin folders on PATH
 RUN \
