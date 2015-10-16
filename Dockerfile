@@ -49,7 +49,7 @@ RUN \
 # Install Node.js
 RUN \
   apt-get install -y nodejs-legacy npm && \
-  npm config set prefix /azk/npm && \
+  npm config set cache /azk/npm && \
   npm install -g grunt-cli
   npm install -g bower
 
