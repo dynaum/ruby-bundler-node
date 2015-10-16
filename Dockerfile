@@ -50,7 +50,7 @@ RUN \
 RUN \
   apt-get install -y nodejs-legacy npm && \
   npm config set cache /azk/npm && \
-  npm install -g grunt-cli
+  npm install -g grunt-cli && \
   npm install -g bower
 
 # Phantomjs 1.9.7
