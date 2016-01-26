@@ -36,7 +36,7 @@ RUN \
 
 # Ruby install
 RUN \
-  curl --progress http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.2.3.tar.gz | tar xz && \
+  curl --progress http://cache.ruby-lang.org/pub/ruby/2.2/ruby-2.2.3.tar.gz | tar xz && \
   cd ruby-2.2.3 && \
   ./configure --disable-install-doc && \
   make && make install && \
