@@ -1,7 +1,7 @@
 # Pull base image.
 FROM azukiapp/ruby:2.2.5
 
-RUN npm install -g bower grunt-cli
+RUN npm install -g bower grunt-cli broccoli
 
 # Phantomjs 1.9.7
 RUN \
