@@ -34,7 +34,8 @@ RUN \
   libfreetype6 \
   libssl-dev \
   libpng-dev \
-  libjpeg-dev
+  libjpeg-dev \
+  imagemagick
 
 # Ruby install
 RUN \
